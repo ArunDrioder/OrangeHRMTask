@@ -22,12 +22,15 @@ public class ActionKeywords {
         if (dataColumnValue.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+            System.out.println("Execution Started in Chrome Browser");
         } else if (dataColumnValue.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            System.out.println("Execution Started in Firefox Browser");
         } else if (dataColumnValue.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
+            System.out.println("Execution Started in Edge Browser");
         }
 
 
@@ -37,12 +40,14 @@ public class ActionKeywords {
     }
 
     public static void goToUrl() {
+
         driver.get(dataColumnValue);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
 
     public static void enterUsername() {
+
         WebElement username = driver.findElement(ExecutionClass.locator);
         username.sendKeys(dataColumnValue);
 
@@ -57,6 +62,7 @@ public class ActionKeywords {
     }
 
     public static void clickLogin() {
+
         WebElement loginButton = driver.findElement(ExecutionClass.locator);
         loginButton.click();
 

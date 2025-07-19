@@ -23,7 +23,7 @@ public class ExecutionClass {
 
     public static void main(String[] args) throws IOException, InvocationTargetException, IllegalAccessException {
         ExcelReader reader = new ExcelReader();
-        reader.readExcelFile("C:\\Users\\arunp\\IdeaProjects\\OrangeHRMTask\\src\\test\\java\\resources\\TestData.xlsx");
+        reader.readExcelFile(System.getProperty("user.dir") + "\\src\\test\\java\\resources\\TestData.xlsx");
         ExecutionClass ec = new ExecutionClass();
         int locatorColumn = 3;
         int keywordColumn = locatorColumn + 1;
@@ -42,11 +42,6 @@ public class ExecutionClass {
 
     }
 
-//    public void getKeywordsFromActions() {
-//        actionKeywords = new ActionKeywords();
-//        methods = actionKeywords.getClass().getMethods();
-//
-//    }
 
     public void findWebElementsToBeUsed() {
         switch (ExcelReader.locatorName) {
